@@ -1,0 +1,22 @@
+{
+    "name": "artisancms/installer",
+    "description": "A command line tool to install ArtisanCMS",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Huggins",
+            "email": "andrewhuggins@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.0",
+        "guzzlehttp/guzzle": "^6.1",
+        "symfony/process": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArtisanCms\\": "src"
+        }
+    }
+}
