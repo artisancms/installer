@@ -39,7 +39,7 @@ class NewCommand extends Command
             $composer.' run-script post-root-package-install',
             $composer.' run-script post-install-cmd',
             $composer.' run-script post-create-project-cmd',
-
+            $composer.' update',
         ];
 
         $process = new Process(implode(' && ', $commands), $directory, null, null, null);

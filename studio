@@ -6,7 +6,7 @@ use Symfony\Component\Console\Application;
 
 require 'vendor/autoload.php';
 
-$app = new Application('ArtisanCMS Studio', '0.1.3');
+$app = new Application('ArtisanCMS Studio', '0.1.4');
 
 $app->add(new NewCommand);
 
