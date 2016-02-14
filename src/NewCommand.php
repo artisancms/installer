@@ -34,7 +34,7 @@ class NewCommand extends Command
         $composer = $this->findComposer();
 
         $commands = [
-            $composer.' require laravel/socialite --no-update',
+            $composer.' require artisancms/core --no-update',
             $composer.' install --no-scripts',
             $composer.' run-script post-root-package-install',
             $composer.' run-script post-install-cmd',
