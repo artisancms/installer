@@ -1,6 +1,7 @@
 {
     "name": "artisancms/installer",
     "description": "A command line tool to install ArtisanCMS",
+    "keywords": ["CMS", "ArtisanCMS", "Laravel"],
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -18,5 +19,8 @@
         "psr-4": {
             "ArtisanCms\\": "src"
         }
-    }
+    },
+    "bin": [
+        "studio"
+    ]
 }
