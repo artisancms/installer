@@ -1,6 +1,6 @@
 <?php
 
-namespace ArtisanCms;
+namespace ArtisanCms\Installer;
 
 use ZipArchive;
 use GuzzleHttp\Client;

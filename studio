@@ -1,13 +1,13 @@
 #! /usr/bin/env php
 <?php
 
-use ArtisanCms\NewCommand;
-use ArtisanCms\InstallCommand;
+use ArtisanCms\Installer\NewCommand;
+use ArtisanCms\Installer\InstallCommand;
 use Symfony\Component\Console\Application;
 
 require 'vendor/autoload.php';
 
-$app = new Application('ArtisanCMS Studio', '0.1.9');
+$app = new Application('ArtisanCMS Studio', '0.1.10');
 
 $app->add(new NewCommand);
 $app->add(new InstallCommand);
