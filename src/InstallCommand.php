@@ -18,7 +18,7 @@ class InstallCommand extends Command
              ->setDescription('Complete the installation process');
     }
 
-    public function execute()
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $file = __DIR__ . "/app/config/app.php";
         $file_contents = file($file);
