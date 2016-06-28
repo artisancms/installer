@@ -20,23 +20,24 @@ class InstallCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $file = __DIR__ . "/app/config/app.php";
+        $file = getcwd() .  "/config/app.php";
         $file_contents = file($file);
 
-        var_dump($file_contents);
-
         //the blank line is needed for consistency
+
         $service_providers = <<<SERVICE_PROVIDERS
-        'Shoulderscms\Shoulderscms\ShoulderscmsServiceProvider',
-        'Lavary\Menu\ServiceProvider',
-        'Jaybizzle\Safeurl\SafeurlServiceProvider',
+
+        ArtisanCMS\CMS\Providers\CMSServiceProvider::class,
+
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
         $aliases = <<<ALIASES
-        'Menu'          => 'Shoulderscms\Shoulderscms\Facades\Menu',
-        'Safeurl'           => 'Jaybizzle\Safeurl\Facades\Safeurl',
+
+        // Nothing to add yet.
+
 ALIASES;
-        $temp_file = fopen("app/config/app.temp.php", "w");
+    
+        $temp_file = fopen(getcwd() . "/config/app.temp.php", "w");
         $write_the_providers = false;
         $write_the_aliases = false;
         foreach ($file_contents as $line) {
@@ -54,12 +55,12 @@ ALIASES;
                 continue;
             }
             //look for the declaration of the providers array
-            if (strpos($line, "'providers' => array(") !== false) {
+            if (strpos($line, "'providers' => [") !== false) {
             // on the next line, we need to write the service providers lines
                 $write_the_providers = true;
             }
             //look for the declaration of the aliases array
-            if (strpos($line, "'aliases' => array(") !== false) {
+            if (strpos($line, "'aliases' => [") !== false) {
             //on the next line, we need to write the aliases lines
                 $write_the_aliases = true;
 
@@ -69,6 +70,6 @@ ALIASES;
         }
         fclose($temp_file);
         unlink($file);
-        rename($temp_file, "app/config/app.php");
+        rename(getcwd() . '/config/app.temp.php', getcwd() . "/config/app.php");
     }
 }
