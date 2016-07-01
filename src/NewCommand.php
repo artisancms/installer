@@ -34,7 +34,7 @@ class NewCommand extends Command
         $composer = $this->findComposer();
 
         $commands = [
-            $composer.' require artisancms/core v0.1.6 --no-update',
+            $composer.' require artisancms/core v0.1.7 --no-update',
             $composer.' install --no-scripts',
             $composer.' run-script post-root-package-install',
             $composer.' run-script post-install-cmd',
@@ -42,6 +42,7 @@ class NewCommand extends Command
             $composer.' update',
             'studio install',
             'php artisan vendor:publish',
+            'php artisan utils:db',
         ];
 
         $process = new Process(implode(' && ', $commands), $directory, null, null, null);
