@@ -28,6 +28,7 @@ class InstallCommand extends Command
         $service_providers = <<<SERVICE_PROVIDERS
 
         ArtisanCMS\CMS\Providers\CMSServiceProvider::class,
+        AHuggins\Utilities\Providers\UtilityServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
