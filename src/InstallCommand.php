@@ -29,12 +29,13 @@ class InstallCommand extends Command
 
         ArtisanCMS\CMS\Providers\CMSServiceProvider::class,
         AHuggins\Utilities\Providers\UtilityServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
         $aliases = <<<ALIASES
 
-        // Nothing to add yet.
+        'Menu'       => Lavary\Menu\Facade::class,
 
 ALIASES;
     

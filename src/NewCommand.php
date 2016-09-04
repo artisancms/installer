@@ -6,6 +6,7 @@ use ZipArchive;
 use GuzzleHttp\Client;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -16,7 +17,8 @@ class NewCommand extends Command
     {
         $this->setName('new')
              ->setDescription('Create a new install of ArtisanCMS')
-             ->addArgument('name', InputArgument::REQUIRED);
+             ->addArgument('name', InputArgument::REQUIRED)
+             ->addOption('dev', null, InputOption::VALUE_NONE);
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
@@ -34,7 +36,7 @@ class NewCommand extends Command
         $composer = $this->findComposer();
 
         $commands = [
-            $composer.' require artisancms/core v0.1.7 --no-update',
+            $composer.' require artisancms/core ' . ($input->getOption('dev') ? 'dev-master' : 'v0.1.7') . ' --no-update',
             $composer.' install --no-scripts',
             $composer.' run-script post-root-package-install',
             $composer.' run-script post-install-cmd',
