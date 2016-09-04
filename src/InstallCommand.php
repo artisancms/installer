@@ -38,7 +38,7 @@ SERVICE_PROVIDERS;
         $aliases = <<<ALIASES
 
         'Menu'       => Lavary\Menu\Facade::class,
-        'Theme' => 'Teepluss\Theme\Facades\Theme',
+        'Theme' => Teepluss\Theme\Facades\Theme::class,
 
 ALIASES;
     
