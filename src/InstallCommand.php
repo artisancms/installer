@@ -28,6 +28,7 @@ class InstallCommand extends Command
         $service_providers = <<<SERVICE_PROVIDERS
 
         ArtisanCMS\CMS\Providers\CMSServiceProvider::class,
+        ArtisanCMS\AdminViews\Providers\ArtisanCMSAdminViewsServiceProvider::class,
         AHuggins\Utilities\Providers\UtilityServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
 
