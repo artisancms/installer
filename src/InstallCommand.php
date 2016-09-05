@@ -60,7 +60,9 @@ ALIASES;
                 continue;
             }
             //look for the declaration of the providers array
-            if (strpos($line, "'providers' => [") !== false) {
+            if (strpos($line, "/*
+         * Package Service Providers...
+         */") !== false) {
             // on the next line, we need to write the service providers lines
                 $write_the_providers = true;
             }
