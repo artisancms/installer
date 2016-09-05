@@ -41,16 +41,19 @@ SERVICE_PROVIDERS;
         'Theme' => Teepluss\Theme\Facades\Theme::class,
 
 ALIASES;
-    
+
         $temp_file = fopen(getcwd() . "/config/app.temp.php", "w");
         $write_the_providers = false;
         $write_the_aliases = false;
+        $service_providers_have_been_written = false;
+        $count = 0;
         foreach ($file_contents as $line) {
             // We found the providers array declaration
             // Now write the service providers
-            if ($write_the_providers === true) {
+            if ($write_the_providers === true && $service_providers_have_been_written === false && $count > 1) {
                 fwrite($temp_file, $service_providers);
                 $write_the_providers = false; // done writing the service providers
+                $service_providers_have_been_written = true;
                 continue;
             }
             // We found the aliases array, now write the aliases
@@ -60,9 +63,8 @@ ALIASES;
                 continue;
             }
             //look for the declaration of the providers array
-            if (strpos($line, "/*
-         * Package Service Providers...
-         */") !== false) {
+            if (strpos($line, "//") !== false) {
+                $count++;
             // on the next line, we need to write the service providers lines
                 $write_the_providers = true;
             }
