@@ -31,14 +31,12 @@ class InstallCommand extends Command
         ArtisanCMS\AdminViews\Providers\ArtisanCMSAdminViewsServiceProvider::class,
         AHuggins\Utilities\Providers\UtilityServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
-        Teepluss\Theme\ThemeServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
         $aliases = <<<ALIASES
 
         'Menu'       => Lavary\Menu\Facade::class,
-        'Theme' => Teepluss\Theme\Facades\Theme::class,
 
 ALIASES;
 
