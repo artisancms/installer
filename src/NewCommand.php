@@ -43,7 +43,7 @@ class NewCommand extends Command
             $composer.' run-script post-create-project-cmd',
             $composer.' update',
             'studio install',
-            'php artisan vendor:publish',
+            'php artisan vendor:publish --force',
             'php artisan utils:db',
         ];
 
