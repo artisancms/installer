@@ -32,7 +32,6 @@ class InstallCommand extends Command
         AHuggins\Utilities\Providers\UtilityServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         ArtisanCMS\Blog\Providers\BlogServiceProvider::class,
-        ArtisanCMS\Theme\Providers\ThemeServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
