@@ -31,6 +31,7 @@ class InstallCommand extends Command
         ArtisanCMS\AdminViews\Providers\ArtisanCMSAdminViewsServiceProvider::class,
         AHuggins\Utilities\Providers\UtilityServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         ArtisanCMS\Blog\Providers\BlogServiceProvider::class,
 
 SERVICE_PROVIDERS;
