@@ -33,12 +33,14 @@ class InstallCommand extends Command
         Lavary\Menu\ServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         ArtisanCMS\Blog\Providers\BlogServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
         $aliases = <<<ALIASES
 
         'Menu'       => Lavary\Menu\Facade::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
 
 ALIASES;
 
