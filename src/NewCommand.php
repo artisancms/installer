@@ -35,8 +35,10 @@ class NewCommand extends Command
 
         $composer = $this->findComposer();
 
+        $version = ($input->getOption('dev') ? 'dev-master' : 'v0.1.*');
+
         $commands = [
-            $composer.' require artisancms/core ' . ($input->getOption('dev') ? 'dev-master' : 'v0.1.7') . ' --no-update',
+            $composer.' require artisancms/core ' . $version . ' --no-update',
             $composer.' install --no-scripts',
             $composer.' run-script post-root-package-install',
             $composer.' run-script post-install-cmd',
