@@ -34,6 +34,7 @@ class InstallCommand extends Command
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         ArtisanCMS\Blog\Providers\BlogServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
@@ -41,6 +42,8 @@ SERVICE_PROVIDERS;
 
         'Menu'       => Lavary\Menu\Facade::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
 ALIASES;
 
