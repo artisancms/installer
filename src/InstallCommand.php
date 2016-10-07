@@ -35,6 +35,7 @@ class InstallCommand extends Command
         ArtisanCMS\Blog\Providers\BlogServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
@@ -44,6 +45,8 @@ SERVICE_PROVIDERS;
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Widget'       => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
 
 ALIASES;
 
