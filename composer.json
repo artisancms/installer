@@ -14,7 +14,7 @@
         "symfony/console": "~2.3|~3.0",
         "guzzlehttp/guzzle": "^6.1",
         "symfony/process": "~2.3|~3.0",
-        "artisancms/installer": "v0.1.35"
+        "artisancms/installer": "v0.1.37"
     },
     "autoload": {
         "psr-4": {
