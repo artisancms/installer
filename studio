@@ -11,7 +11,7 @@ if (file_exists(__DIR__.'/vendor/autoload.php')) {
     require __DIR__.'/../../autoload.php';
 }
 
-$app = new Application('ArtisanCMS Studio', '0.1.37');
+$app = new Application('ArtisanCMS Studio', '0.1.38');
 
 $app->add(new NewCommand);
 $app->add(new InstallCommand);

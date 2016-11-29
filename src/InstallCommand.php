@@ -36,6 +36,7 @@ class InstallCommand extends Command
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         ArtisanCMS\Widgets\ServiceProvider::class,
+        Plank\Mediable\MediableServiceProvider::class,
 
 SERVICE_PROVIDERS;
         // the blank line is needed for consistency
@@ -47,6 +48,7 @@ SERVICE_PROVIDERS;
         'Html' => Collective\Html\HtmlFacade::class,
         'Widget'       => ArtisanCMS\Widgets\Facade::class,
         'AsyncWidget'  => ArtisanCMS\Widgets\AsyncFacade::class,
+        'MediaUploader' => Plank\Mediable\MediaUploaderFacade::class,
 
 ALIASES;
 
